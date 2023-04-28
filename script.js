@@ -9,6 +9,7 @@ let text;
 let query = '';
 let check = false;
 let triangle = false;
+let arr=[];
 
 
 
@@ -83,6 +84,8 @@ function changeColor(e) {
 
         triangle ? circleDraw() : shapeDrawer(shapeValue);
 
+        
+
     } else {
         draw(query);
     }
@@ -134,11 +137,17 @@ function draw(text) {
 
 //this  function check which shape draw
 function drawShape(e) {
-  
+  arr.push(`drawShape${e}`);
+  console.log(arr)
+
+   if(obj.left > 250 && obj.top >80 ){
+     return '';
+   }
 
     check = true;
     let shape = e.getAttribute("data-shape");
     if (shape == 'square') {
+        
 
         triangle = false;
         shapeValue.width = 50;
@@ -181,6 +190,11 @@ function shapeDrawer(shapeValue) {
 //this  function is circle drawer
 function circleDraw() {
 
+    if(obj.left > 250 ){
+        obj.top = 80;
+        obj.left =10;
+       }
+
     ctx.fillStyle ="#fff";
     ctx.fill();
     ctx.beginPath();
@@ -196,28 +210,35 @@ function circleDraw() {
 
 
 //this is function upload image and img drawer
-// function uploadImage(e){
-//     const imgObj = new Image(e);
+function uploadImage(e){
+   let div = document.createElement ('div');
+   div.id='img-div'
 
-//     imgObj.onload = function () {
-//       ctx.drawImage(imgObj, 0, 0, obj.width, obj.height);
-//     };
-
-// }
+}
 
 
 //this  function  draw triangle 
 function drawTriangle() {
 
+    if(obj.left > 250 ){
+        obj.top = 80;
+        obj.left =10;
+       }
+
+    var top=obj.top;
+    var left=obj.left;
+   
 
 
-    // ctx.clearRect(0, 0, obj.width, obj.height)
+    
     ctx.fillStyle = obj.color;
     ctx.beginPath();
-    ctx.moveTo(obj.left, obj.top)
-    ctx.lineTo(0, 35)
-    ctx.lineTo(40, 35)
+    ctx.moveTo(left + 30, top)
+    ctx.lineTo (left+10,top + 40)
+    ctx.lineTo (left+50,top + 40)
     ctx.fillStyle = obj.color;
     ctx.fill();
-    ctx.moveTo(20, 20)
+    obj.left=left + 60;
+    
+   
 }
