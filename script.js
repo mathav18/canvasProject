@@ -279,9 +279,7 @@ function capture(e) {
         e.style.marginTop =  t + 'px';
 
     // }
-    
-
-
     x = []
     y = [];
+    
 }
