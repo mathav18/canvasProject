@@ -142,6 +142,8 @@ function draw(text) {
 
 //this  function check which shape draw
 function drawShape(e) {
+
+    ctx.clearRect(0, 0, obj.width, obj.height)
     arr.push(`drawShape${e}`);
     console.log(arr)
 
@@ -249,9 +251,11 @@ function drawTriangle() {
     ctx.moveTo(left + 30, top)
     ctx.lineTo(left + 10, top + 40)
     ctx.lineTo(left + 50, top + 40)
+    
     ctx.fillStyle = obj.color;
     ctx.fill();
     obj.left = left + 60;
+
 }
 
 
