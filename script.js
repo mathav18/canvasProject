@@ -143,8 +143,8 @@ function draw(text) {
 //this  function check which shape draw
 function drawShape(e) {
 
-    ctx.clearRect(0, 0, obj.width, obj.height)
-    arr.push(`drawShape${e}`);
+    
+   
     console.log(arr)
 
     if (obj.left > 250 && obj.top > 80) {
@@ -274,7 +274,7 @@ function capture(e) {
     let t=y[y.length - 2]-200
 
     // if(l > 40 && t > 18 ) {
-        console.log(l,t)
+      
         e.style.marginLeft =  l + 'px'
         e.style.marginTop =  t + 'px';
 
