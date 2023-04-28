@@ -13,23 +13,27 @@ let triangle = false;
 
 
 
-const obj = {
-    width: 800,
+const obj = {  //this obj has position, background and font style
+        width: 800,
     height: 400,
     color: '#FB8332',
-    left: 20,
-    top: 20,
+    left: 10,
+    top: 10,
     fontSize: 20,
     textStyle: 'normal'
 
 }
 
-const shapeValue = {
+
+const shapeValue = { //this obj has shape prorerties
     x: 10,
     y: 10,
     width: 300,
     height: 300
 }
+
+
+//this  function is get text value and call the text Draw function 
 
 function drawer() {
     check = false
@@ -37,15 +41,21 @@ function drawer() {
     draw(query);
 }
 
+
+//this function is set text fontSize
 function setFontSize(e) {
+
     let temp = obj.fontSize;
     obj.fontSize = e.value;
     temp > e.value ? obj.top += e.value - temp : obj.top -= temp - e.value;
-
     check ? null : topInp.value = obj.top;
     check ? null : draw(query);
+
 }
 
+
+
+//this function is set x and y position 
 function setPosition(e) {
 
     e.name == 'left' ? obj.left = e.value : obj.top = e.value;
@@ -60,11 +70,10 @@ function setPosition(e) {
 
     }
 
-
-
-
 }
 
+
+//this function is text and shape color change
 function changeColor(e) {
 
     obj.color = e.value;
@@ -81,6 +90,8 @@ function changeColor(e) {
 
 
 
+
+//this function is change text style ( bold or italic )
 function textStyleChanger(e) {
 
     if (e == ele) {
@@ -100,13 +111,28 @@ function textStyleChanger(e) {
 }
 
 
+
+
+//this function is  insert text 
 function draw(text) {
-    ctx.clearRect(0, 0, obj.width, obj.height)
+    
+    if( obj.left > 200 && obj.top > 20 ) {
+        obj.left = 10;
+        obj.top = 10;
+    }
+
+   ctx.clearRect(0, 0, obj.width, obj.height)
     ctx.fillStyle = obj.color;
-    ctx.font = ` ${obj.textStyle} ${obj.fontSize}pt Courier`
-    ctx.fillText(text, obj.left, obj.top)
+    ctx.font = ` ${obj.textStyle} ${obj.fontSize}px Courier`
+    ctx.fillText(text, obj.left, obj.top + 10)
 }
 
+
+
+
+
+
+//this  function check which shape draw
 function drawShape(e) {
   
 
@@ -133,11 +159,15 @@ function drawShape(e) {
 }
 
 
+
+
+
+//this  function is shape drawing
 function shapeDrawer(shapeValue) {
 
-   if(obj.left > 200 ){
+   if(obj.left > 250 ){
     obj.top = 80;
-    obj.left =20;
+    obj.left =10;
    }
 
     ctx.fillStyle = obj.color;
@@ -146,21 +176,26 @@ function shapeDrawer(shapeValue) {
   
 }
 
-//circle drawer
+
+
+//this  function is circle drawer
 function circleDraw() {
 
     ctx.fillStyle ="#fff";
     ctx.fill();
     ctx.beginPath();
-    ctx.arc(20, 20, 20, 0, 2 * Math.PI);
+    ctx.arc( obj.left + 10, obj.top + 10, 20, 20, 0, 2 * Math.PI);
     ctx.fillStyle = obj.color;
     ctx.fill();
+    obj.left=obj.left + 40;
         
  
 
 
 }
 
+
+//this is function upload image and img drawer
 // function uploadImage(e){
 //     const imgObj = new Image(e);
 
@@ -171,13 +206,15 @@ function circleDraw() {
 // }
 
 
+//this  function  draw triangle 
 function drawTriangle() {
 
 
-    ctx.clearRect(0, 0, obj.width, obj.height)
+
+    // ctx.clearRect(0, 0, obj.width, obj.height)
     ctx.fillStyle = obj.color;
     ctx.beginPath();
-    ctx.moveTo(20, 0)
+    ctx.moveTo(obj.left, obj.top)
     ctx.lineTo(0, 35)
     ctx.lineTo(40, 35)
     ctx.fillStyle = obj.color;
