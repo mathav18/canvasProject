@@ -75,11 +75,8 @@ function changeColor(e){
         triangle ? circleDraw() :shapeDrawer(shapeValue);
 
     } else {
-
         draw(query);
-
     }
-
 }
 
 
@@ -144,7 +141,7 @@ function shapeDrawer(shapeValue){
     ctx.fillRect(obj.left,obj.top,shapeValue.width,shapeValue.height)
  }
 
- //triangle drawer
+ //circle drawer
 function circleDraw(){
  
    
@@ -155,21 +152,26 @@ function circleDraw(){
 
 }
 
-function uploadImage(e){
-    
-   let img=new SimpleImage(e)
-   img.drawTo(canvas)
+// function uploadImage(e){
+//     const imgObj = new Image(e);
+
+//     imgObj.onload = function () {
+//       ctx.drawImage(imgObj, 0, 0, obj.width, obj.height);
+//     };
  
-}
+// }
 
 
 function drawTriangle () {
+
+   
+  
     ctx.clearRect(0,0,obj.width,obj.height)
     ctx.fillStyle=obj.color;
     //  ctx.beginPath();
-     ctx.moveTo(70,0)
-     ctx.lineTo(0,120)
-     ctx.lineTo(140,120)
+     ctx.moveTo(20,0)
+     ctx.lineTo(0,35)
+     ctx.lineTo(40,35)
    
      ctx.fillStyle = "#FB8332";
      ctx.fill();

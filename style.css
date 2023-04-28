@@ -58,9 +58,9 @@ label{
    font-size: 20px;
    padding:0px 5px 0px 20px;
 }
-canvas{
-   width:100%;
-height:100%;
+.canvas-panel{
+   width:50%;
+height:50%;
     
    
     border: 1px solid #FB8332;
@@ -166,4 +166,10 @@ height:100%;
 }
 .triangle:hover{
     opacity: 1;
+}
+
+#test{
+    width:100px;
+    height: 100px;
+    background-color: #ff6600;
 }
