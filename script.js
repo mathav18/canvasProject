@@ -143,12 +143,13 @@ function shapeDrawer(shapeValue){
 
  //circle drawer
 function circleDraw(){
- 
    
+    ctx.clearRect(0, 0, 500, 500)
+   
+    ctx.arc( 20, 20, 20, 0,  2 * Math.PI);
     ctx.fillStyle=obj.color;
-    ctx.arc( obj.left+10, obj.top+10, 20, 0,  2 * Math.PI);
     ctx.fill();
-    
+ 
 
 }
 
@@ -164,15 +165,14 @@ function circleDraw(){
 
 function drawTriangle () {
 
-   
-  
+
     ctx.clearRect(0,0,obj.width,obj.height)
     ctx.fillStyle=obj.color;
-    //  ctx.beginPath();
+     ctx.beginPath();
      ctx.moveTo(20,0)
      ctx.lineTo(0,35)
      ctx.lineTo(40,35)
-   
-     ctx.fillStyle = "#FB8332";
+     ctx.fillStyle = obj.color;
      ctx.fill();
+     ctx.moveTo(20,20)
 }
