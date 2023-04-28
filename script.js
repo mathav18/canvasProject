@@ -11,6 +11,10 @@ let query = '';
 let check = false;
 let triangle = false;
 let arr = [];
+var x = [];
+var y = [];
+
+
 
 
 
@@ -86,7 +90,6 @@ function changeColor(e) {
         triangle ? circleDraw() : shapeDrawer(shapeValue);
 
 
-
     } else {
         draw(query);
     }
@@ -108,6 +111,7 @@ function textStyleChanger(e) {
     if (ele) {
         ele.classList.remove('selected')
     }
+
     ele = e;
     ele.classList.add('selected')
     obj.textStyle = e.getAttribute("data-name");
@@ -125,7 +129,7 @@ function draw(text) {
         obj.top = 10;
     }
 
-    ctx.clearRect(0, 0, obj.width, obj.height)
+     ctx.clearRect(0, 0, obj.width, obj.height)
     ctx.fillStyle = obj.color;
     ctx.font = ` ${obj.textStyle} ${obj.fontSize}px Courier`
     ctx.fillText(text, obj.left, obj.top + 10)
@@ -199,11 +203,10 @@ function circleDraw() {
     ctx.fillStyle = "#fff";
     ctx.fill();
     ctx.beginPath();
-    ctx.arc(obj.left + 10, obj.top + 10, 20, 20, 0, 2 * Math.PI);
+    ctx.arc(obj.left + 30, obj.top + 30, 20, 20, 2, 2 * Math.PI);
     ctx.fillStyle = obj.color;
     ctx.fill();
     obj.left = obj.left + 40;
-
 
 
 
@@ -214,12 +217,19 @@ function circleDraw() {
 function uploadImage(e) {
     let div = document.createElement('div');
     div.id = 'img-div'
-    div.style.backgroundImage = URL.createObjectURL(e.files[0]);
+    let src = URL.createObjectURL(e.files[0]);
+    div.setAttribute('draggable', "true")
+    div.setAttribute('ondrag', "drag(this,event)")
+    div.setAttribute('ondragend', "capture(this)")
+
+
     template.append(div)
     div.style.marginTop = obj.top + '%'
     div.style.marginLeft = obj.left + '%'
-
-
+    const img = document.createElement('img');
+    img.src = src;
+    div.append(img)
+  
 
 }
 
@@ -234,10 +244,6 @@ function drawTriangle() {
 
     var top = obj.top;
     var left = obj.left;
-
-
-
-
     ctx.fillStyle = obj.color;
     ctx.beginPath();
     ctx.moveTo(left + 30, top)
@@ -246,6 +252,32 @@ function drawTriangle() {
     ctx.fillStyle = obj.color;
     ctx.fill();
     obj.left = left + 60;
+}
 
 
+//this is function is drag element and cature x y position
+function drag(e, event) {
+    x.push(event.clientX);
+    y.push(event.clientY);
+    event.preventDefault();
+}
+
+
+//this is function is dragElement capture and that  is align this position
+
+function capture(e) {
+    let l=x[x.length - 2]-400
+    let t=y[y.length - 2]-200
+
+    // if(l > 40 && t > 18 ) {
+        console.log(l,t)
+        e.style.marginLeft =  l + 'px'
+        e.style.marginTop =  t + 'px';
+
+    // }
+    
+
+
+    x = []
+    y = [];
 }
