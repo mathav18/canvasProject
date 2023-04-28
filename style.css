@@ -62,7 +62,7 @@ label{
    width:50%;
 height:50%;
     
-   
+   padding: 10px;
     border: 1px solid #FB8332;
     margin: 10px 10px;
     
@@ -70,7 +70,7 @@ height:50%;
 .color-parent{
     width:30px;
     height: 30px;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     overflow: hidden;
     border-radius: 50%;
  
