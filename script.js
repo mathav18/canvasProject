@@ -2,20 +2,21 @@ const divELement = document.querySelector('#query');
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 ctx.imageSmoothingEnabled = false;
-let topInp = document.querySelector('#top')
+let topInp = document.querySelector('#top');
+const template = document.querySelector('.template2')
 let ele;
 let currentText = "";
 let text;
 let query = '';
 let check = false;
 let triangle = false;
-let arr=[];
+let arr = [];
 
 
 
 
-const obj = {  //this obj has position, background and font style
-        width: 800,
+const obj = { //this obj has position, background and font style
+    width: 800,
     height: 400,
     color: '#FB8332',
     left: 10,
@@ -84,7 +85,7 @@ function changeColor(e) {
 
         triangle ? circleDraw() : shapeDrawer(shapeValue);
 
-        
+
 
     } else {
         draw(query);
@@ -118,13 +119,13 @@ function textStyleChanger(e) {
 
 //this function is  insert text 
 function draw(text) {
-    
-    if( obj.left > 200 && obj.top > 20 ) {
+
+    if (obj.left > 200 && obj.top > 20) {
         obj.left = 10;
         obj.top = 10;
     }
 
-   ctx.clearRect(0, 0, obj.width, obj.height)
+    ctx.clearRect(0, 0, obj.width, obj.height)
     ctx.fillStyle = obj.color;
     ctx.font = ` ${obj.textStyle} ${obj.fontSize}px Courier`
     ctx.fillText(text, obj.left, obj.top + 10)
@@ -137,17 +138,17 @@ function draw(text) {
 
 //this  function check which shape draw
 function drawShape(e) {
-  arr.push(`drawShape${e}`);
-  console.log(arr)
+    arr.push(`drawShape${e}`);
+    console.log(arr)
 
-   if(obj.left > 250 && obj.top >80 ){
-     return '';
-   }
+    if (obj.left > 250 && obj.top > 80) {
+        return '';
+    }
 
     check = true;
     let shape = e.getAttribute("data-shape");
     if (shape == 'square') {
-        
+
 
         triangle = false;
         shapeValue.width = 50;
@@ -174,15 +175,15 @@ function drawShape(e) {
 //this  function is shape drawing
 function shapeDrawer(shapeValue) {
 
-   if(obj.left > 250 ){
-    obj.top = 80;
-    obj.left =10;
-   }
+    if (obj.left > 250) {
+        obj.top = 80;
+        obj.left = 10;
+    }
 
     ctx.fillStyle = obj.color;
     ctx.fillRect(obj.left, obj.top, shapeValue.width, shapeValue.height)
     obj.left = shapeValue.width + obj.left + 10;
-  
+
 }
 
 
@@ -190,29 +191,35 @@ function shapeDrawer(shapeValue) {
 //this  function is circle drawer
 function circleDraw() {
 
-    if(obj.left > 250 ){
+    if (obj.left > 250) {
         obj.top = 80;
-        obj.left =10;
-       }
+        obj.left = 10;
+    }
 
-    ctx.fillStyle ="#fff";
+    ctx.fillStyle = "#fff";
     ctx.fill();
     ctx.beginPath();
-    ctx.arc( obj.left + 10, obj.top + 10, 20, 20, 0, 2 * Math.PI);
+    ctx.arc(obj.left + 10, obj.top + 10, 20, 20, 0, 2 * Math.PI);
     ctx.fillStyle = obj.color;
     ctx.fill();
-    obj.left=obj.left + 40;
-        
- 
+    obj.left = obj.left + 40;
+
+
 
 
 }
 
 
 //this is function upload image and img drawer
-function uploadImage(e){
-   let div = document.createElement ('div');
-   div.id='img-div'
+function uploadImage(e) {
+    let div = document.createElement('div');
+    div.id = 'img-div'
+    div.style.backgroundImage = URL.createObjectURL(e.files[0]);
+    template.append(div)
+    div.style.marginTop = obj.top + '%'
+    div.style.marginLeft = obj.left + '%'
+
+
 
 }
 
@@ -220,25 +227,25 @@ function uploadImage(e){
 //this  function  draw triangle 
 function drawTriangle() {
 
-    if(obj.left > 250 ){
+    if (obj.left > 250) {
         obj.top = 80;
-        obj.left =10;
-       }
+        obj.left = 10;
+    }
 
-    var top=obj.top;
-    var left=obj.left;
-   
+    var top = obj.top;
+    var left = obj.left;
 
 
-    
+
+
     ctx.fillStyle = obj.color;
     ctx.beginPath();
     ctx.moveTo(left + 30, top)
-    ctx.lineTo (left+10,top + 40)
-    ctx.lineTo (left+50,top + 40)
+    ctx.lineTo(left + 10, top + 40)
+    ctx.lineTo(left + 50, top + 40)
     ctx.fillStyle = obj.color;
     ctx.fill();
-    obj.left=left + 60;
-    
-   
+    obj.left = left + 60;
+
+
 }
