@@ -66,20 +66,18 @@ label{
    padding:0px 5px 0px 20px;
 }
 .canvas-panel{
-   width: 88%;
-   height:84%;
-    
-   padding: 10px;
+ 
+  
     border: 1px solid #FB8332;
     margin: 10px 10px;
     position: absolute;
+  
   
     
 }
 .color-parent{
     width:30px;
     height: 30px;
-    /* background-color: chartreuse; */
     overflow: hidden;
     border-radius: 50%;
  
@@ -121,6 +119,9 @@ label{
     height:87%;
     display: grid;
     grid-template-columns: 10% 90%;
+}
+.clearBtn{
+    background: #515151;
 }
 .shape-template{
   width:100%;
@@ -199,3 +200,17 @@ img{
     width: 400px;
     height:200px;
 }
+
+#text-panel {
+  
+    width: auto;
+    padding:3px 10px 3px 10px;
+    height: auto;
+    position: absolute;
+    border: 1px solid;
+    display: none;
+    z-index: 1;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: grey;
+   }
