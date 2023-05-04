@@ -68,7 +68,9 @@
         text : false,
         ctx : context,
         top:TOP_POSITION,
-        left:LEFT_POSITION
+        left:LEFT_POSITION,
+        X:10,
+        Y:15
     }
     var CANVAS_STYLE = {
         COLOR :'#FF802C',

@@ -23,7 +23,7 @@ var styleELement;
 
 function printer(uesrText) {
   
-    ctx.textDraw(X,Y, uesrText, ctx.CANVAS_PAINTER, CANVAS_STYLE);
+    ctx.textDraw(ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, uesrText, ctx.CANVAS_PAINTER, CANVAS_STYLE);
 }
 
 
@@ -73,8 +73,8 @@ ctx.textStyleChanger = (element) =>  {
     plate.innerText = "";
     plate.setAttribute('contenteditable', 'true')
     plate.focus();
-    X = x - 180;
-    Y = y - 120;
+    ctx.CANVAS_PAINTER.X = x - 180;
+    ctx.CANVAS_PAINTER.Y = y - 120;
 
 
 }
@@ -86,8 +86,8 @@ ctx.textEnterd = (element) => {
     if (element.innerText != '' ) {
     ctx.CANVAS_PAINTER.text = true;
     uesrText = element.innerText;
-     ctx.CANVAS_PAINTER.left.value = X;
-     ctx.CANVAS_PAINTER.top.value = Y;
+     ctx.CANVAS_PAINTER.left.value = ctx.CANVAS_PAINTER.X;
+     ctx.CANVAS_PAINTER.top.value = ctx.CANVAS_PAINTER.Y;
 
     printer(uesrText)
     element.style.display = 'none';

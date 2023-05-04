@@ -1,6 +1,5 @@
 // "use strict";
-var X = 10;
-var Y = 15;
+
 var uesrText = '';
 
 
@@ -11,13 +10,13 @@ var uesrText = '';
    
      ctx.setPosition  = function ( element ) {
         
-        element.name == 'left' ? ( X = element.value ) : ( Y = element.value )
+        element.name == 'left' ? ( ctx.CANVAS_PAINTER.X = element.value ) : ( ctx.CANVAS_PAINTER.Y = element.value )
        
         if (window.CANVAS_PAINTER.text ) {
         
-        textDraw ( X, Y, uesrText , ctx.CANVAS_PAINTER, CANVAS_STYLE );
+        textDraw ( ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, uesrText , ctx.CANVAS_PAINTER, CANVAS_STYLE );
         } else {
-            drawShape(undefined,window.currentCanvas, X, Y , true)
+            drawShape(undefined,window.currentCanvas, ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y , true)
           
         }
     }
@@ -30,11 +29,11 @@ var uesrText = '';
     
         if( ctx.CANVAS_PAINTER.text ) {
     
-        textDraw(X, Y ,uesrText , ctx.CANVAS_PAINTER, CANVAS_STYLE);
+        textDraw(ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y ,uesrText , ctx.CANVAS_PAINTER, CANVAS_STYLE);
         
         } else {
 
-            drawShape(undefined,window.currentCanvas, X, Y)
+            drawShape(undefined,window.currentCanvas, ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y)
       
         }
     }

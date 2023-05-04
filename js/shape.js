@@ -1,14 +1,14 @@
 
-var temp_X =10;
-var temp_Y =15;
 
 
 ( function(ctx) {
 
- ctx.drawShape = (element, currentShape, x, y, temp) => {
+ ctx.drawShape = (element, currentShape, l, t, temp) => {
     var style = window.CANVAS_STYLE;
-    var X = x ? x :temp_X;
-    var Y = y ? y :temp_Y;
+    var X = l ? l :ctx.CANVAS_PAINTER.X;
+    var Y = t ? t :ctx.CANVAS_PAINTER.Y;
+
+
    
     var shapeName = element ? (element.getAttribute("data-shape")) : ctx.currentCanvas;
     console.log(shapeName)  
