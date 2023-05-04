@@ -50,112 +50,101 @@ const shapeValue = { //this obj has shape prorerties
 
 //this  function is get text value and call the text Draw function 
 
-function drawer() {
-    check = false
-    query = divELement.innerText;
-    draw(query);
-}
+// function drawer() {
+//     check = false
+//     query = divELement.innerText;
+//     draw(query);
+// }
 
 
 //this function is set text fontSize
 function setFontSize(e) {
-
     let temp = obj.fontSize;
     obj.fontSize = e.value;
     temp > e.value ? obj.top += e.value - temp : obj.top -= temp - e.value;
     check ? null : topInp.value = obj.top;
     check ? null : draw(query);
-
 }
 
 
 
-//this function is set x and y position 
-function setPosition(e) {
 
-    e.name == 'left' ? (obj.left = e.value) : (obj.top = e.value);
+// this function is set x and y position 
+// function setPosition(e) {
 
-    if (check) {
+   
+
+//     if (check) {
       
-        triangle ? circleDraw() : shapeDrawer(shapeValue);
-    } else {
+//         triangle ? circleDraw() : shapeDrawer(shapeValue);
+//     } else {
        
-        draw(query);
-    }
-}
+//         draw(query);
+//     }
+// }
 
 
 //this function is text and shape color change
-function changeColor(e) {
+// function changeColor(e) {
 
-    obj.color = e.value;
-    ctx.fillStyle = obj.color;
+//     obj.color = e.value;
+//     ctx.fillStyle = obj.color;
 
 
-    switch(currentShape) {
-        case 'text':
-            draw(query , 'color');
-            break;
-        case 'square':
-            ctx.fillRect(currentImage.left, currentImage.top, currentImage.width, currentImage.height);
-            break;
-        default:
-            console.log('triangel or circle')
-    }
-}
+//     switch(currentShape) {
+//         case 'text':
+//             draw(query , 'color');
+//             break;
+//         case 'square':
+//             ctx.fillRect(currentImage.left, currentImage.top, currentImage.width, currentImage.height);
+//             break;
+//         default:
+//             console.log('triangel or circle')
+//     }
+// }
 
 
 
 
 //this function is change text style ( bold or italic )
-function textStyleChanger(e) {
+// function textStyleChanger(e) {
 
-    if (e == ele) {
-        e.classList.remove('selected')
-        obj.textStyle = 'normal';
-        check ? null : draw(query);
-        return ''
-    }
+//     if (e == ele) {
+//         e.classList.remove('selected')
+//         obj.textStyle = 'normal';
+//         check ? null : draw(query);
+//         return ''
+//     }
 
-    if (ele) {
-        ele.classList.remove('selected')
-    }
+//     if (ele) {
+//         ele.classList.remove('selected')
+//     }
 
-    ele = e;
-    ele.classList.add('selected')
-    obj.textStyle = e.getAttribute("data-name");
-    check ? null : draw(query);
-}
+//     ele = e;
+//     ele.classList.add('selected')
+//     obj.textStyle = e.getAttribute("data-name");
+//     check ? null : draw(query);
+// }
 
 
 
 
 //this function is  insert text 
-function draw(text , color) {
-      currentShape ='text'
-    if (obj.left > 900) {
-        obj.left = 10;
-        obj.top = obj.top + 30;
+// function draw(x, y, text , val ,style) {
+//      console.log(val)
+    //   currentShape ='text'
 
-    }
-
-    if (color) {
-        console.log(currentTextLeft,currentTextTop,textWidth,textHeight)
-        ctx.fillRect(currentTextLeft,currentTextTop,textWidth,textHeight);
-    
-    }
+    //  ctx.clearRect(0,0,val.CANVAS_CONSTANTS.WIDTH,val.CANVAS_CONSTANTS.HEIGHT);
+    //  ctx.fillStyle = style.COLOR;
+    //  ctx.font = ` ${style.FONT} ${style.FONT_SIZE}px Arial`
+    // let t = ctx.fillText(text, x, y)
+    //  textWidth =Math.floor(ctx.measureText(text).width);
+    //  textHeight=parseInt(ctx.font);
+    //  currentTextLeft =obj.left;
+    //  currentTextTop =obj.top;
+    // obj.left=textWidth+obj.left + 10;
   
-     ctx.fillStyle = obj.color;
-     ctx.font = ` ${obj.textStyle} ${obj.fontSize}px Arial`
-     let t = ctx.fillText(text, obj.left, obj.top)
-     textWidth =Math.floor(ctx.measureText(text).width);
-     textHeight=parseInt(ctx.font);
-     currentTextLeft =obj.left;
-     currentTextTop =obj.top;
-   
-    obj.left=textWidth+obj.left + 10;
-  
-}
+// }
 
 
 
@@ -233,16 +222,16 @@ function circleDraw() {
 
 
 //this is function upload image and img drawer
-function uploadImage(e) {
+// function uploadImage(e) {
 
-    let src = URL.createObjectURL(e.files[0]);
-    let img = new Image();
-    img.src = src;
-    img.onload = function () {
-        ctx.drawImage(img, 40, 40, 300, 200);
-    };
+//     let src = URL.createObjectURL(e.files[0]);
+//     let img = new Image();
+//     img.src = src;
+//     img.onload = function () {
+//         ctx.drawImage(img, 40, 40, 300, 200);
+//     };
 
-}
+// }
 
 
 //this  function  draw triangle 
@@ -294,16 +283,16 @@ function drawTriangle() {
 
 
 
-function textEnter(e, event) {
-    let x = event.clientX;
-    let y = event.clientY;
-    textPanel.style.display = 'block';
-    textPanel.style.top = y + 'px'
-    textPanel.style.left = x + 'px'
-    textPanel.innerText = "";
-    textPanel.setAttribute('contenteditable', 'true')
-    textPanel.focus();
-}
+// function textEnter(e, event) {
+    // let x = event.clientX;
+    // let y = event.clientY;
+    // textPanel.style.display = 'block';
+    // textPanel.style.top = y + 'px'
+    // textPanel.style.left = x + 'px'
+    // textPanel.innerText = "";
+    // textPanel.setAttribute('contenteditable', 'true')
+    // textPanel.focus();
+// }
 
 
 // textPanel.onblur = function (e, event) {
@@ -316,11 +305,11 @@ function textEnter(e, event) {
 
 function fillText(e, event) {
 
-    if (event.keyCode === 13) {
-        query = e.innerText;
-        draw(query)
-        e.style.display = 'none'
-    }
+    // if (event.keyCode === 13) {
+    //     query = e.innerText;
+    //     draw(query)
+    //     e.style.display = 'none'
+    // }
 }
 
 //clear canvas
@@ -330,4 +319,3 @@ function clearCanvas () {
     obj.top = 5;
 }
 
-console.log(CANVAS_PAINTER)

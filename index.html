@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"></link>
-    <!-- <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/510/fabric.min.js"></script> -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Great+Vibes&family=Josefin+Sans&family=Lato:wght@100&family=Lobster&family=Neonderthaw&family=Noto+Sans+Khmer:wght@600&family=Noto+Sans+Symbols+2&family=Orbitron&family=Outfit&family=Pacifico&family=Poppins:wght@200&family=Rajdhani:wght@300&family=Roboto+Mono:wght@500&family=Roboto:ital@1&family=Shantell+Sans:wght@300&family=Ubuntu:wght@300&display=swap');
-      </style>
-        <script src="https://kit.fontawesome.com/4d02abcf66.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css"> </link>
+    <script src="https://kit.fontawesome.com/4d02abcf66.js" crossorigin="anonymous"></script>
     <title>canvas</title>
 </head>
+
 <body>
     <div id="whole-container">
         <div class="header">
-            <div id="query" class="divEle"contenteditable="true"></div>
-            <button onclick="drawer()">Draw</button>
-            <button onclick="clearCanvas()"  class="clearBtn">clear</button>
+            <div id="query" class="divEle" contenteditable="true"></div>
+            <button >Draw</button>
+            <button class="clearBtn">clear</button>
         </div>
+
         <div class="header">
             <label>Font Size: </label>
-           <input  type="number" class="divEle inpDiv"  oninput="setFontSize(this)"  value="15" min="1"></input>
-           <label>Top: </label>
-           <input  type="number" class="divEle inpDiv"  oninput="setPosition(this)" name="top" value=10 min="1" id="top"></input>
-           <label>Left: </label>
-           <input  type="number" class="divEle inpDiv"  oninput="setPosition(this)" name="left" value=10 min="5"></input>
-           <label>Color: </label>
-           <div class="color-parent">
-            <input  type="color" class="divEle inpDiv"  oninput="changeColor(this)" value="#FB8332" id="color"></input>
-           </div>
-           <div class="textStyle-panel">
-            <div class="textStyle" onclick="textStyleChanger(this)" data-name="bold"><i class="fa-solid fa-bold" style="color: #ff7700;" ></i></div>
-            <div class="textStyle" onclick="textStyleChanger(this)" data-name="italic"><i class="fa-solid fa-italic" style="color: #ff7700;"  ></i></div>
-            
-           </div>
-         
+            <input type="number" class="divEle inpDiv"  value="20" min="20"></input>
+            <label>Top: </label>
+            <input type="number" class="divEle inpDiv"  name="top" value=15 min="15" ></input>
+            <label>Left: </label>
+            <input type="number" class="divEle inpDiv"  name="left" value=10 min="5"></input>
+            <label>Color: </label>
+            <div class="color-parent">
+                <input type="color" class="divEle inpDiv"  value="#FB8332" id="color"></input>
+            </div>
+            <div class="textStyle-panel">
+                <div class="textStyle"  data-name="bold"><i class="fa-solid fa-bold"
+                        style="color: #ff7700;"></i></div>
+                <div class="textStyle"  data-name="italic"><i class="fa-solid fa-italic"
+                        style="color: #ff7700;"></i></div>
+
+            </div>
+
         </div>
         <div class="template1">
             <div class="shape-template">
-              <div  class="shape "  onclick="drawShape(this)" data-shape="square"></div>
-              <div class="shape circle" onclick="drawShape(this)" data-shape="circle"></div>
-              <div class="shape rectangle" onclick="drawShape(this)" data-shape="rectangle"></div>
-              <div     class="triangle" onclick="drawTriangle()" data-shape="triangle"> </div>
-              <div  class="shape image"   data-shape="square">
+                <div class="shape "  data-shape="square"></div>
+                <div class="shape circle"  data-shape="circle"></div>
+                <div class="shape rectangle"  data-shape="rectangle"></div>
+                <div id="triangle"   data-shape="triangle"> </div>
 
-               
-                <input type="file" id="chooseImg" accept="image/*" onchange="uploadImage(this)"> <i class="fa-solid fa-image" style="color: #ff7b00;"></i></input>
-               
-                </i></div>
+                <div class="image" data-shape="square">
+                    <input type="file" id="chooseImg" accept="image/*" >
+                     <i class="fa-solid fa-image" style="color: #ff7b00;"></i>
+                    </input> 
+                </div>
 
             </div>
-            <div  class="template2" >
-               
+            <div class="template2">
 
-                <div id="text-panel"  contenteditable="true" onkeydown="fillText(this,event)"></div>
-              <canvas class="canvas-panel"  ondblclick="textEnter(this,event)"  width=1000 height=700  id="canvas" > </canvas>
+
+                <div id="text-panel" contenteditable="true" ></div>
+                <canvas class="canvas-panel"  width=1000 height=700 id="canvas">
+                </canvas>
             </div>
         </div>
-      
-    </div>
-  
 
-    <script src="script.js"></script>
-    <script src="js/ui.js"></script>
+    </div>
+
+    <script src="js/constant.js" ></script>
+    <script src="js/script.js" ></script>
+    <script src="js/ui.js" ></script>
+    <script src="js/text.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/shape.js"></script>
+    <script src="js/util.js"></script>
+ 
+   
 </body>
+
 </html>

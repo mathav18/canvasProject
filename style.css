@@ -167,7 +167,7 @@ label{
     height:50px;
 }
 
-.triangle{
+#triangle{
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-bottom:35px solid #ff6600;
