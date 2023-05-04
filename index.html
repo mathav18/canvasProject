@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> </link>
+    <link rel="stylesheet" href="style.css">
+    </link>
     <script src="https://kit.fontawesome.com/4d02abcf66.js" crossorigin="anonymous"></script>
     <title>canvas</title>
 </head>
@@ -14,64 +15,62 @@
     <div id="whole-container">
         <div class="header">
             <div id="query" class="divEle" contenteditable="true"></div>
-            <button >Draw</button>
+            <button>Draw</button>
             <button class="clearBtn">clear</button>
         </div>
 
         <div class="header">
             <label>Font Size: </label>
-            <input type="number" class="divEle inpDiv"  value="20" min="20"></input>
+            <input type="number" class="divEle inpDiv" value="20" min="20"  max="60"></input>
             <label>Top: </label>
-            <input type="number" class="divEle inpDiv"  name="top" value=15 min="15" ></input>
+            <input type="number" class="divEle inpDiv" name="top" value=15 min="15"  ></input>
             <label>Left: </label>
-            <input type="number" class="divEle inpDiv"  name="left" value=10 min="5"></input>
+            <input type="number" class="divEle inpDiv" name="left" value=10 min="5"></input>
             <label>Color: </label>
             <div class="color-parent">
-                <input type="color" class="divEle inpDiv"  value="#FB8332" id="color"></input>
+                <input type="color" class="divEle inpDiv" value="#FB8332" id="color"></input>
             </div>
             <div class="textStyle-panel">
-                <div class="textStyle"  data-name="bold"><i class="fa-solid fa-bold"
-                        style="color: #ff7700;"></i></div>
-                <div class="textStyle"  data-name="italic"><i class="fa-solid fa-italic"
-                        style="color: #ff7700;"></i></div>
+                <div class="textStyle" data-name="bold"><i class="fa-solid fa-bold" style="color: #ff7700;"></i></div>
+                <div class="textStyle" data-name="italic"><i class="fa-solid fa-italic" style="color: #ff7700;"></i>
+                </div>
 
             </div>
 
         </div>
         <div class="template1">
             <div class="shape-template">
-                <div class="shape "  data-shape="square"></div>
-                <div class="shape circle"  data-shape="circle"></div>
-                <div class="shape rectangle"  data-shape="rectangle"></div>
-                <div id="triangle"   data-shape="triangle"> </div>
+                <div class="shape " data-shape="square"></div>
+                <div class="shape circle" data-shape="circle"></div>
+                <div class="shape rectangle" data-shape="rectangle"></div>
+                <div id="triangle" data-shape="triangle"> </div>
 
                 <div class="image" data-shape="square">
-                    <input type="file" id="chooseImg" accept="image/*" >
-                     <i class="fa-solid fa-image" style="color: #ff7b00;"></i>
-                    </input> 
+                    <input type="file" id="chooseImg" accept="image/*">
+                    <i class="fa-solid fa-image" style="color: #ff7b00;"></i>
+                    </input>
                 </div>
 
             </div>
             <div class="template2">
 
 
-                <div id="text-panel" contenteditable="true" ></div>
-                <canvas class="canvas-panel"  width=1000 height=700 id="canvas">
+                <div id="text-panel" contenteditable="true"></div>
+                <canvas class="canvas-panel" width=1000 height=700 id="canvas">
                 </canvas>
             </div>
         </div>
 
     </div>
 
-    <script src="js/constant.js" ></script>
-    <script src="js/script.js" ></script>
-    <script src="js/ui.js" ></script>
+    <script src="js/constant.js"></script>
+    <script src="js/ui.js"></script>
     <script src="js/text.js"></script>
     <script src="js/canvas.js"></script>
     <script src="js/shape.js"></script>
     <script src="js/util.js"></script>
- 
-   
+
+
 </body>
 
 </html>

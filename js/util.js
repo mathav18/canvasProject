@@ -13,7 +13,7 @@ function setPosition  ( element ) {
     
     textDraw ( X, Y, uesrText , MY_OBJ, CANVAS_STYLE );
     } else {
-        drawShape(undefined,window.currentCanvas, X, Y)
+        drawShape(undefined,window.currentCanvas, X, Y , true)
     }
 
 }

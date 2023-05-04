@@ -1,12 +1,15 @@
  "use strict";
 
+
+
+(function (ctx){
+
 const INPUTELEMENTS=document.querySelectorAll('.divEle')
 const FONT_SIZE = INPUTELEMENTS[1];
 const POSITION_LEFT = INPUTELEMENTS[2];
 const POSITION_TOP =  INPUTELEMENTS[3];
 const CHANGE_COLOR_INPUT = INPUTELEMENTS[4];
 window.POSITION_TOP;
-
 
 FONT_SIZE.addEventListener('input', function () { fontSizeChanger(this) });
 
@@ -45,7 +48,9 @@ const IMAGE_UPLOAD_INPUT = document.querySelector('#chooseImg');
 
 IMAGE_UPLOAD_INPUT.addEventListener('change', function () { uploadImage(this) } )
 
-window.CANVAS_PAINTER.CANVAS_ELEMENT.addEventListener('dblclick', function () { textEnter(this,event) } )
+ctx.CANVAS_PAINTER.CANVAS_ELEMENT.addEventListener('dblclick', function () { textEnter(this,event) } )
 
-window.CANVAS_PAINTER.TEXT_PLATE.addEventListener('blur', function(){ textEnterd(this) })
-window.CANVAS_PAINTER.TEXT_PLATE.addEventListener('keydown', function(){ Enter(this) })
+ctx.CANVAS_PAINTER.TEXT_PLATE.addEventListener('blur', function(){ textEnterd(this) })
+ctx.CANVAS_PAINTER.TEXT_PLATE.addEventListener('keydown', function(){ Enter(this) })
+
+},(this))
