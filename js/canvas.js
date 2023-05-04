@@ -27,14 +27,16 @@ function reactangle (  val, X, Y, style ) {
 
 
 function circle (  val, X, Y, style ) {
-
-   
+    let left = val.SHAPES.CIRCLE.X ;
+    let top = val.SHAPES.CIRCLE.Y
     clearCanvas(val);
-    ctx.arc( val.SHAPES.CIRCLE.X, val.SHAPES.CIRCLE.Y, val.SHAPES.CIRCLE.radius, val.SHAPES.CIRCLE.startAngle, val.SHAPES.CIRCLE.endAngle, val.SHAPES.CIRCLE.direction);
+    ctx.arc( left, top, val.SHAPES.CIRCLE.radius, val.SHAPES.CIRCLE.startAngle, val.SHAPES.CIRCLE.endAngle, val.SHAPES.CIRCLE.direction);
     ctx.fillStyle = style.COLOR;
     ctx.fill();
 
 }
+
+
 
 function trinagle ( val, X, Y, style ) {
     let x= val.SHAPES.TRIANGLE.X
@@ -63,5 +65,7 @@ function imageUpload (val,img) {
 
 function clearCanvas (val) {
 
-    ctx.clearRect(0,0,val.CANVAS_CONSTANTS.WIDTH,val.CANVAS_CONSTANTS.HEIGHT);
+    let c = val ? val : window.CANVAS_PAINTER;
+    ctx.clearRect(0,0,c.CANVAS_CONSTANTS.WIDTH,c.CANVAS_CONSTANTS.HEIGHT);
+    
 }

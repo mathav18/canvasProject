@@ -79,6 +79,8 @@ function textEnter( element, event ) {
     plate.innerText = "";
     plate.setAttribute('contenteditable', 'true')
     plate.focus();
+    X =x -105;
+    Y =y-105;
 
 }
 
@@ -87,6 +89,7 @@ function textEnter( element, event ) {
 function textEnterd ( element ) {
     window.CANVAS_PAINTER.text =true ;
     uesrText = element.innerText;
+
     printer(uesrText)
     element.style.display = 'none';
     
