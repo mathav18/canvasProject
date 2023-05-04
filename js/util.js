@@ -1,5 +1,11 @@
-let X = 10;
-let Y = 15;
+
+
+
+
+( function(ctx) { 
+
+var X = 10;
+var Y = 15;
 var uesrText = '';
 
 
@@ -7,7 +13,7 @@ var uesrText = '';
 function setPosition  ( element ) {
 
     element.name == 'left' ? ( X = element.value ) : ( Y = element.value )
-    let text = MY_OBJ.INPUT_DIV.innerText;
+    var text = MY_OBJ.INPUT_DIV.innerText;
 
     if (window.CANVAS_PAINTER.text ) {
     
@@ -15,14 +21,13 @@ function setPosition  ( element ) {
     } else {
         drawShape(undefined,window.currentCanvas, X, Y , true)
     }
-
 }
 
 
 
 function changeColor ( element ) {
 
-    let text = MY_OBJ.INPUT_DIV.innerText;
+    var text = MY_OBJ.INPUT_DIV.innerText;
     CANVAS_STYLE.COLOR = element.value;
 
     if( window.CANVAS_PAINTER.text ) {
@@ -35,6 +40,7 @@ function changeColor ( element ) {
 
 }
 
+})
 
 
 

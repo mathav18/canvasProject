@@ -2,11 +2,11 @@ var temp_X = 10;
 var temp_y = 15;
 
 function drawShape(element, currentShape, l, t ,temp) {
-    let style = window.CANVAS_STYLE;
-    let X = l ? l : temp_X
-    let Y = t ? t : temp_y
+    var style = window.CANVAS_STYLE;
+    var X = l ? l : temp_X
+    var Y = t ? t : temp_y
 
-    let shapeName = element ? (element.getAttribute("data-shape")) : currentShape;
+    var shapeName = element ? (element.getAttribute("data-shape")) : currentShape;
 
     window.CANVAS_PAINTER.text = false;
     switch (shapeName) {
@@ -39,8 +39,8 @@ function drawShape(element, currentShape, l, t ,temp) {
 
 function uploadImage(element) {
 
-    let src = URL.createObjectURL(element.files[0]);
-    let img = new Image();
+    var src = URL.createObjectURL(element.files[0]);
+    var img = new Image();
     img.src = src;
     imageUpload(window.CANVAS_PAINTER, img);
 }

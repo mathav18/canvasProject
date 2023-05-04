@@ -48,7 +48,6 @@
         Y :20
     }
   
-   
     const CANVAS = document.querySelector('canvas');
     const context = CANVAS.getContext('2d')
     const INPUT_DIV = document.querySelector('#query');
@@ -64,7 +63,6 @@
         text : false,
         ctx : context
     }
- 
     var CANVAS_STYLE = {
         COLOR :'#FF802C',
         FONT : 'NORMAL',
