@@ -11,7 +11,7 @@
 
 
  ctx.square = ( val, X, Y, style ) => {
-    
+
     clearCanvas(val)
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
     ctx.CANVAS_PAINTER.ctx.fillRect (X, Y, val.SHAPES.SQUARE.width, val.SHAPES.SQUARE.height);
@@ -29,11 +29,9 @@
 
 
 ctx.circle = (  val, X, Y, style ,temp) => {
-    if(temp)
-        X++;   Y++;
-     
-    
- 
+
+    if(temp) {   X++; Y++; }
+      
     let circle_X = Number(X) + 45;
     let circle_Y = Number(Y) + 40;
     clearCanvas(val);
@@ -77,8 +75,9 @@ ctx.imageUpload = (val,img) =>  {
     if(!val) {
         Y = 10;
         X = 15;
+        ctx.currentCanvas = '';
     }
-
+    
     let c = val ? val : window.CANVAS_PAINTER;
     ctx.CANVAS_PAINTER.ctx.clearRect(0,0,c.CANVAS_CONSTANTS.WIDTH,c.CANVAS_CONSTANTS.HEIGHT);
     

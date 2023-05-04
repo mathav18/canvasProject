@@ -10,28 +10,32 @@ var uesrText = '';
 
    
      ctx.setPosition  = function ( element ) {
-
+        
         element.name == 'left' ? ( X = element.value ) : ( Y = element.value )
        
         if (window.CANVAS_PAINTER.text ) {
         
-        textDraw ( X, Y, uesrText , window.CANVAS_PAINTER, CANVAS_STYLE );
+        textDraw ( X, Y, uesrText , ctx.CANVAS_PAINTER, CANVAS_STYLE );
         } else {
             drawShape(undefined,window.currentCanvas, X, Y , true)
+          
         }
     }
     
+
     
   ctx.changeColor = function ( element )  {
     
         CANVAS_STYLE.COLOR = element.value;
     
-        if( window.CANVAS_PAINTER.text ) {
+        if( ctx.CANVAS_PAINTER.text ) {
     
-        textDraw(X, Y ,uesrText , MY_OBJ, CANVAS_STYLE);
+        textDraw(X, Y ,uesrText , ctx.CANVAS_PAINTER, CANVAS_STYLE);
         
         } else {
+
             drawShape(undefined,window.currentCanvas, X, Y)
+      
         }
     }
 

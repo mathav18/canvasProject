@@ -1,41 +1,42 @@
-var temp_X = 10;
-var temp_y = 15;
 
+var temp_X =10;
+var temp_Y =15;
 
 
 ( function(ctx) {
 
- ctx.drawShape = (element, currentShape, l, t, temp) => {
+ ctx.drawShape = (element, currentShape, x, y, temp) => {
     var style = window.CANVAS_STYLE;
-    var X = l ? l : temp_X
-    var Y = t ? t : temp_y
-
-    var shapeName = element ? (element.getAttribute("data-shape")) : currentShape;
-
+    var X = x ? x :temp_X;
+    var Y = y ? y :temp_Y;
+   
+    var shapeName = element ? (element.getAttribute("data-shape")) : ctx.currentCanvas;
+    console.log(shapeName)  
     window.CANVAS_PAINTER.text = false;
     switch (shapeName) {
         case window.CANVAS_PAINTER.SHAPES.SQUARE.name:
-            window.currentCanvas = window.CANVAS_PAINTER.SHAPES.SQUARE.name
-            ctx.square(window.CANVAS_PAINTER, X, Y, style);
+            ctx.currentCanvas = ctx.CANVAS_PAINTER.SHAPES.SQUARE.name
+            ctx.square(ctx.CANVAS_PAINTER, X, Y, style);
             break;
 
-        case window.CANVAS_PAINTER.SHAPES.REACTANGLE.name:
-            window.currentCanvas = window.CANVAS_PAINTER.SHAPES.REACTANGLE.name
-            ctx.reactangle(window.CANVAS_PAINTER, X, Y, style)
+        case ctx.CANVAS_PAINTER.SHAPES.REACTANGLE.name:
+            ctx.currentCanvas = ctx.CANVAS_PAINTER.SHAPES.REACTANGLE.name
+            ctx.reactangle(ctx.CANVAS_PAINTER, X, Y, style)
             break;
 
 
-        case window.CANVAS_PAINTER.SHAPES.CIRCLE.name:
-            window.currentCanvas = window.CANVAS_PAINTER.SHAPES.CIRCLE.name
-            ctx.circle(window.CANVAS_PAINTER, X, Y, style, temp);
+        case ctx.CANVAS_PAINTER.SHAPES.CIRCLE.name:
+            ctx.currentCanvas = ctx.CANVAS_PAINTER.SHAPES.CIRCLE.name
+            ctx.circle(ctx.CANVAS_PAINTER, X, Y, style, temp);
             break;
 
-        case window.CANVAS_PAINTER.SHAPES.TRIANGLE.name:
-            window.currentCanvas = window.CANVAS_PAINTER.SHAPES.TRIANGLE.name
-           ctx.trinagle(window.CANVAS_PAINTER, X, Y, style)
+        case ctx.CANVAS_PAINTER.SHAPES.TRIANGLE.name:
+            ctx.currentCanvas = ctx.CANVAS_PAINTER.SHAPES.TRIANGLE.name
+           ctx.trinagle(ctx.CANVAS_PAINTER, X, Y, style)
             break;
 
         default:
+           
             return ''
     }
 }
@@ -46,7 +47,7 @@ ctx.uploadImage = (element) => {
     var src = URL.createObjectURL(element.files[0]);
     var img = new Image();
     img.src = src;
-    imageUpload(window.CANVAS_PAINTER, img);
+    imageUpload(ctx.CANVAS_PAINTER, img);
 }
 
 } (this) )

@@ -76,27 +76,43 @@ ctx.textStyleChanger = (element) =>  {
     X = x - 180;
     Y = y - 120;
 
+
 }
 
 
 
 ctx.textEnterd = (element) => {
+
+    if (element.innerText != '' ) {
     ctx.CANVAS_PAINTER.text = true;
     uesrText = element.innerText;
+     ctx.CANVAS_PAINTER.left.value = X;
+     ctx.CANVAS_PAINTER.top.value = Y;
 
     printer(uesrText)
     element.style.display = 'none';
+    } else {
+        element.style.display='none'
+        console.log(true)
+    }
 
 }
 
 
 ctx.Enter = (element) => {
+
+  
     ctx.CANVAS_PAINTER.text = true;
     if (event.keyCode === 13) {
+        if (element.innerText != '' ) {
         uesrText = element.innerText;
         printer(uesrText)
         element.style.display = 'none'
+    } else {
+        element.style.display='none'
     }
+
+    } 
 }
 
 

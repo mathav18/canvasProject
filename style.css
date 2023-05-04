@@ -214,3 +214,9 @@ img{
     font-family: sans-serif;
     color: grey;
    }
+
+   #text-panel:focus {
+    outline: none;
+   border: 1px solid #FF6600;
+    
+   }

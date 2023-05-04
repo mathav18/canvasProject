@@ -52,6 +52,11 @@
     const context = CANVAS.getContext('2d')
     const INPUT_DIV = document.querySelector('#query');
     const TEXT_PLATE = document.querySelector('#text-panel')
+    const POSITION = document.querySelectorAll('.position');
+    const TOP_POSITION = POSITION[0];
+    const LEFT_POSITION = POSITION[1];
+
+
    
     ctx.CANVAS_PAINTER = {
         CANVAS_CONSTANTS : CANVAS_CONSTANTS ,
@@ -61,7 +66,9 @@
         INPUT_DIV : INPUT_DIV,
         TEXT_PLATE : TEXT_PLATE,
         text : false,
-        ctx : context
+        ctx : context,
+        top:TOP_POSITION,
+        left:LEFT_POSITION
     }
     var CANVAS_STYLE = {
         COLOR :'#FF802C',
@@ -69,7 +76,7 @@
         FONT_SIZE : 20
     }
     ctx.CANVAS_STYLE = CANVAS_STYLE
-    var currentCanvas = "square"
+    var currentCanvas = ""
     ctx.currentCanvas = currentCanvas
 
 })(this);
