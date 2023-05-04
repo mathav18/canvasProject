@@ -40,7 +40,7 @@
         },
 
     }
-    
+
     const IMAGE = {
         width :300,
         height :200,
@@ -73,15 +73,5 @@
     ctx.currentCanvas = currentCanvas
 
 })(this);
-
-
-
-
-
-
-
-
-
-
 
 

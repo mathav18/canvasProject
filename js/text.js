@@ -1,11 +1,11 @@
-"use strict"
 var styleELement;
 
 ( function(ctx) { 
 
-function drawer() {
-    window.CANVAS_PAINTER.text = true;
-    window.currentCanvas = '';
+ ctx.drawer =() => {
+    console.log(true)
+    ctx.CANVAS_PAINTER.text = true;
+    ctx.currentCanvas = '';
 
     var temp = ctx.CANVAS_PAINTER.INPUT_DIV.innerText;
 
@@ -22,16 +22,17 @@ function drawer() {
 
 
 function printer(uesrText) {
-    textDraw(X, Y, uesrText, ctx.CANVAS_PAINTER, CANVAS_STYLE);
+  
+    ctx.textDraw(X,Y, uesrText, ctx.CANVAS_PAINTER, CANVAS_STYLE);
 }
 
 
 
-function textStyleChanger(element) {
+ctx.textStyleChanger = (element) =>  {
 
 
-    if (window.CANVAS_PAINTER.text) {
-       
+    if (ctx.CANVAS_PAINTER.text) {
+    
         if (element == styleELement) {
             element.classList.remove('selected')
             CANVAS_STYLE.FONT = 'normal'
@@ -51,7 +52,7 @@ function textStyleChanger(element) {
 
 
 
-function fontSizeChanger(element) {
+ ctx.fontSizeChanger = (element) => {
 
     CANVAS_STYLE.FONT_SIZE = element ? (element.value) : (CANVAS_STYLE.FONT_SIZE += 1);
     y_positon = element ? (element.value) : (CANVAS_STYLE.FONT_SIZE += 1)
@@ -61,11 +62,11 @@ function fontSizeChanger(element) {
 
 
 
-function textEnter(element, event) {
+ ctx.textEnter = (element, event) => {
 
     var x = event.clientX;
     var y = event.clientY;
-    var plate = window.CANVAS_PAINTER.TEXT_PLATE;
+    var plate = ctx.CANVAS_PAINTER.TEXT_PLATE;
     plate.style.display = 'block';
     plate.style.top = y + 'px';
     plate.style.left = x + 'px';
@@ -79,8 +80,8 @@ function textEnter(element, event) {
 
 
 
-function textEnterd(element) {
-    window.CANVAS_PAINTER.text = true;
+ctx.textEnterd = (element) => {
+    ctx.CANVAS_PAINTER.text = true;
     uesrText = element.innerText;
 
     printer(uesrText)
@@ -89,8 +90,8 @@ function textEnterd(element) {
 }
 
 
-function Enter(element) {
-    window.CANVAS_PAINTER.text = true;
+ctx.Enter = (element) => {
+    ctx.CANVAS_PAINTER.text = true;
     if (event.keyCode === 13) {
         uesrText = element.innerText;
         printer(uesrText)
@@ -98,4 +99,14 @@ function Enter(element) {
     }
 }
 
+
+
+
+
 }(this))
+
+
+
+
+
+

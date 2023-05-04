@@ -1,6 +1,7 @@
 
 ( function ( ctx ) { 
-function textDraw(X, Y, text , val ,style) {
+ ctx.textDraw = (X, Y, text , val ,style) => {
+ 
     clearCanvas(val)
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
     ctx.CANVAS_PAINTER.ctx.font = ` ${style.FONT} ${style.FONT_SIZE}px Arial`
@@ -9,7 +10,7 @@ function textDraw(X, Y, text , val ,style) {
 }
 
 
-function square ( val, X, Y, style ) {
+ ctx.square = ( val, X, Y, style ) => {
     
     clearCanvas(val)
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
@@ -18,7 +19,7 @@ function square ( val, X, Y, style ) {
 }
 
 
-function reactangle (  val, X, Y, style ) {
+ ctx.reactangle = (  val, X, Y, style ) => {
 
     clearCanvas(val)
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
@@ -27,7 +28,7 @@ function reactangle (  val, X, Y, style ) {
 }
 
 
-function circle (  val, X, Y, style ,temp) {
+ctx.circle = (  val, X, Y, style ,temp) => {
     if(temp)
         X++;   Y++;
      
@@ -45,7 +46,7 @@ function circle (  val, X, Y, style ,temp) {
 
 
 
-function trinagle ( val, X, Y, style ) {
+ ctx.trinagle = ( val, X, Y, style ) =>  {
   
     let x= val.SHAPES.TRIANGLE.X
     let y = val.SHAPES.TRIANGLE.Y
@@ -62,7 +63,7 @@ function trinagle ( val, X, Y, style ) {
 
 
 
-function imageUpload (val,img) {
+ctx.imageUpload = (val,img) =>  {
     clearCanvas(val);
     img.onload = function () {
         ctx.CANVAS_PAINTER.ctx.drawImage(img, val.IMAGE.X,val.IMAGE.X , val.IMAGE.width, val.IMAGE.height );
@@ -71,7 +72,7 @@ function imageUpload (val,img) {
 
 
 
-function clearCanvas (val) {
+ ctx.clearCanvas = (val) => {
 
     if(!val) {
         Y = 10;
