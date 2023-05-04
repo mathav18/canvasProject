@@ -1,9 +1,6 @@
  "use strict";
 
 
-
-
-
 const INPUTELEMENTS=document.querySelectorAll('.divEle')
 const FONT_SIZE = INPUTELEMENTS[1];
 const POSITION_LEFT = INPUTELEMENTS[2];

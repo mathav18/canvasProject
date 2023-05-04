@@ -9,7 +9,6 @@ var uesrText = '';
 ( function (ctx) { 
 
    
-
      ctx.setPosition  = function ( element ) {
 
         element.name == 'left' ? ( X = element.value ) : ( Y = element.value )
