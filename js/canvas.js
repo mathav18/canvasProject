@@ -65,8 +65,8 @@ ctx.imageUpload = (val,img) =>  {
 
     clearCanvas(val);
     img.onload = function () {
-        let img_x = val.X -50;
-        let img_y = val.Y -50;
+        let img_x = val.X -30;
+        let img_y = val.Y -30;
         ctx.CANVAS_PAINTER.ctx.drawImage(img, img_x, img_y , val.IMAGE.width, val.IMAGE.height );
     };
 }
@@ -81,6 +81,8 @@ ctx.imageUpload = (val,img) =>  {
         ctx.currentCanvas = '';
         ctx.CANVAS_PAINTER.left.value = 10;
         ctx.CANVAS_PAINTER.top.value = 15;
+        ctx.CANVAS_PAINTER.X =10;
+        ctx.CANVAS_PAINTER.Y =15;
     }
     
     let c = val ? val : window.CANVAS_PAINTER;
