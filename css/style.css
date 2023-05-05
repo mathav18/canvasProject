@@ -138,8 +138,6 @@ label {
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(10, 1fr);
     place-items: center;
-
-
 }
 
 .shape {

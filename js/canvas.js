@@ -1,20 +1,21 @@
+"use strict";
 /* This file will do canvas draw  */
 ( function ( ctx ) { 
 
   
  ctx.textDraw = (X, Y, text , val ,style) => {
     
-    clearCanvas(val)
+    clearCanvas(val);
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
-    ctx.CANVAS_PAINTER.ctx.font = ` ${style.FONT} ${style.FONT_SIZE}px ${ctx.CANVAS_PAINTER.FONT_NAME}`
-    ctx.CANVAS_PAINTER.ctx.fillText(text, Number(X), Number(Y))
+    ctx.CANVAS_PAINTER.ctx.font = ` ${style.FONT} ${style.FONT_SIZE}px ${ctx.CANVAS_PAINTER.FONT_NAME}`;
+    ctx.CANVAS_PAINTER.ctx.fillText(text, Number(X), Number(Y));
   
 }
 
 //Draw a square
  ctx.square = ( val, X, Y, style ) => {
 
-    clearCanvas(val)
+    clearCanvas(val);
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
     ctx.CANVAS_PAINTER.ctx.fillRect (X, Y, val.SHAPES.SQUARE.width, val.SHAPES.SQUARE.height);
 
@@ -23,7 +24,7 @@
 // Draw a reactangle
  ctx.reactangle = (  val, X, Y, style ) => {
 
-    clearCanvas(val)
+    clearCanvas(val);
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
     ctx.CANVAS_PAINTER.ctx.fillRect (X, Y, val.SHAPES.REACTANGLE.width, val.SHAPES.REACTANGLE.height);
 
@@ -37,7 +38,7 @@ ctx.circle = (  val, X, Y, style ,temp) => {
     let circle_X = Number(X) + 45;
     let circle_Y = Number(Y) + 40;
     clearCanvas(val);
-    ctx.CANVAS_PAINTER.ctx.beginPath()
+    ctx.CANVAS_PAINTER.ctx.beginPath();
     ctx.CANVAS_PAINTER.ctx.arc( circle_X, circle_Y, val.SHAPES.CIRCLE.radius, val.SHAPES.CIRCLE.startAngle, val.SHAPES.CIRCLE.endAngle, val.SHAPES.CIRCLE.direction);
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
     ctx.CANVAS_PAINTER.ctx.fill();
@@ -48,13 +49,13 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 // Draw a trianglr
  ctx.triangle = ( val, X, Y, style ) =>  {
   
-    let x= val.SHAPES.TRIANGLE.X
-    let y = val.SHAPES.TRIANGLE.Y
+    let x= val.SHAPES.TRIANGLE.X;
+    let y = val.SHAPES.TRIANGLE.Y;
     let angle =val.SHAPES.TRIANGLE.angle;
     clearCanvas(val);
     ctx.CANVAS_PAINTER.ctx.beginPath();
-    ctx.CANVAS_PAINTER.ctx.moveTo( x, y)
-    ctx.CANVAS_PAINTER.ctx.lineTo( x+angle*2, y )
+    ctx.CANVAS_PAINTER.ctx.moveTo( x, y);
+    ctx.CANVAS_PAINTER.ctx.lineTo( x+angle*2, y );
     ctx.CANVAS_PAINTER.ctx.lineTo (x+angle, y-angle );
     ctx.CANVAS_PAINTER.ctx.fillStyle =style.COLOR;
     ctx.CANVAS_PAINTER.ctx.fill();
@@ -64,12 +65,16 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 
 // Draw a image
 ctx.imageUpload = (val,img) =>  {
-
+    ctx.CANVAS_PAINTER.text = 'img';
     clearCanvas(val);
-    img.onload = function () {
+    var image = img;
+  
+    
+    image.onload = function () {
         let img_x = val.X -30;
         let img_y = val.Y -30;
-        ctx.CANVAS_PAINTER.ctx.drawImage(img, img_x, img_y , val.IMAGE.width, val.IMAGE.height );
+        ctx.CANVAS_PAINTER.ctx.drawImage(image, img_x, img_y , val.IMAGE.width, val.IMAGE.height );
+        val.CURRENT_IMG = image;
     };
 }
 
@@ -94,4 +99,4 @@ ctx.imageUpload = (val,img) =>  {
 
 }
 
-} (this) )
+} (this) );

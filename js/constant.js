@@ -1,5 +1,6 @@
-/* This file have constants  value*/
 "use strict";
+/* This file have constants  value*/
+
 (function (ctx) {
 
     var CANVAS_CONSTANTS = {
@@ -62,7 +63,7 @@
         CANVAS_ELEMENT: CANVAS,
         INPUT_DIV: INPUT_DIV,
         TEXT_PLATE: TEXT_PLATE,
-        text: false,
+        text: 'text',
         ctx: context,
         top: TOP_POSITION,
         left: LEFT_POSITION,
@@ -71,6 +72,7 @@
         FONT_NAME: 'Arial',
         CURRENT_CANVAS : '',
         CURRENT_TEXT : '',
+        CURRENT_IMG :'',
         X: 10,
         Y: 15
     }

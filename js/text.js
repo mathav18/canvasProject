@@ -1,10 +1,10 @@
-/* Writing a  text function*/
+/* Writing a small text draw function*/
 
 (function (ctx) {
     var styleELement;
     ctx.drawer = () => {
        
-        ctx.CANVAS_PAINTER.text = true;
+        ctx.CANVAS_PAINTER.text = 'text';
         ctx.CANVAS_PAINTER.CURRENT_CANVAS = '';
 
         var temp = ctx.CANVAS_PAINTER.INPUT_DIV.innerText;
@@ -31,7 +31,7 @@
     ctx.textStyleChanger = (element) => {
 
 
-        if (ctx.CANVAS_PAINTER.text) {
+        if (ctx.CANVAS_PAINTER.text == 'text') {
 
             if (element == styleELement) {
                 element.classList.remove('selected')
@@ -60,7 +60,7 @@
         ctx.CANVAS_PAINTER.top.value = ctx.CANVAS_PAINTER.Y;
 
 
-        if (ctx.CANVAS_PAINTER.text) {
+        if (ctx.CANVAS_PAINTER.text == 'text') {
             printer(ctx.CANVAS_PAINTER.CURRENT_TEXT);
         }
     }
@@ -89,7 +89,7 @@
     ctx.textEnterd = (element) => {
 
         if (element.innerText != '') {
-            ctx.CANVAS_PAINTER.text = true;
+            ctx.CANVAS_PAINTER.text = 'text';
             ctx.CANVAS_PAINTER.CURRENT_TEXT = element.innerText;
             ctx.CANVAS_PAINTER.left.value = ctx.CANVAS_PAINTER.X;
             ctx.CANVAS_PAINTER.top.value = ctx.CANVAS_PAINTER.Y;
@@ -107,7 +107,7 @@
     ctx.Enter = (element) => {
 
 
-        ctx.CANVAS_PAINTER.text = true;
+        ctx.CANVAS_PAINTER.text = 'text';
         if (event.keyCode === 13) {
             if (element.innerText != '') {
                 ctx.CANVAS_PAINTER.CURRENT_TEXT = element.innerText;
@@ -130,7 +130,7 @@
         ctx.CANVAS_PAINTER.FONT_NAME = element.innerText;
         ctx.CANVAS_PAINTER.FONT_FAMILY_LIST.style.display = "none"
         ctx.CANVAS_PAINTER.FONT_FAMILY.innerText = element.innerText;
-        if (ctx.CANVAS_PAINTER.text) {
+        if (ctx.CANVAS_PAINTER.text == 'text') {
             printer(ctx.CANVAS_PAINTER.CURRENT_TEXT);
         }
 
