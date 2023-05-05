@@ -220,3 +220,62 @@ img{
    border: 1px solid #FF6600;
     
    }
+
+   .fonts {
+    border-radius: 5px;
+    background-color: rgb(255, 248, 243);
+    margin-left:10px;
+    border: 1px solid #ffddc6;
+    cursor: pointer;
+    padding:6px 10px 6px 10px;
+    width:180px;
+    font-size:20px;
+    color: #FB8332;
+    margin-left: -30px;
+   }
+
+   .font_list{
+   
+    width:200px;
+    height: 350px;
+    background-color: #fff;
+   
+   border-radius: 5px;
+  
+   box-shadow: rgba(0, 0, 0, 1) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+   display: grid;
+   grid-template-rows: repeat(9 ,1fr);
+   
+   align-items: center;
+  /* display: none; */
+
+
+   }
+
+   a{
+    color:#ff6600;
+    font-size:15px;
+   }
+
+ span {
+    color:#2f2f2f;
+    font-size:smaller;
+    padding-left:3%;
+    width: 97%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+  
+}
+ span:hover {
+    background-color: #ffece0;
+  
+    
+}
+
+.font_family_list{
+    position: absolute;
+    z-index: 1;
+    margin: 40px -55px;
+    display: none;
+}

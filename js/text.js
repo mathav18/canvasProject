@@ -121,8 +121,21 @@ ctx.Enter = (element) => {
 }
 
 
+ctx.fontSelector = (element) => {
+   ctx.CANVAS_PAINTER.FONT_FAMILY_LIST.style.display = "block"
+}
 
 
+ctx.chooseFont = (element) => {
+   ctx.CANVAS_PAINTER.FONT_NAME = element.innerText;
+   ctx.CANVAS_PAINTER.FONT_FAMILY_LIST.style.display = "none"
+    ctx.CANVAS_PAINTER.FONT_FAMILY.innerText=element.innerText;
+    if( ctx.CANVAS_PAINTER.text ) {
+        printer(uesrText);
+    }
+
+   
+}
 
 }(this))
 

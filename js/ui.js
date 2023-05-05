@@ -50,3 +50,11 @@ window.CANVAS_PAINTER.TEXT_PLATE.addEventListener('blur', function(){ window.tex
 window.CANVAS_PAINTER.TEXT_PLATE.addEventListener('keydown', function(){ window.Enter(this) })
 
 
+const FONT_FAMILY_SELECTOR = document.querySelector('.fonts');
+FONT_FAMILY_SELECTOR.addEventListener('click',function () { window.fontSelector( this ) })
+
+const FONT_LIST = document.querySelectorAll('.font');
+
+FONT_LIST.forEach((element) => element.addEventListener('click' ,function () { window.chooseFont(this) }) )
+
+

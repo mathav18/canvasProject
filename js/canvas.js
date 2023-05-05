@@ -1,10 +1,12 @@
 
 ( function ( ctx ) { 
+
+  
  ctx.textDraw = (X, Y, text , val ,style) => {
- 
+    console.log(ctx.CANVAS_PAINTER.FONT_NAME)
     clearCanvas(val)
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
-    ctx.CANVAS_PAINTER.ctx.font = ` ${style.FONT} ${style.FONT_SIZE}px Arial`
+    ctx.CANVAS_PAINTER.ctx.font = ` ${style.FONT} ${style.FONT_SIZE}px ${ctx.CANVAS_PAINTER.FONT_NAME}`
     ctx.CANVAS_PAINTER.ctx.fillText(text, X, Y)
   
 }

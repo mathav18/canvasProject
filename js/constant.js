@@ -55,9 +55,10 @@
     const POSITION = document.querySelectorAll('.position');
     const TOP_POSITION = POSITION[0];
     const LEFT_POSITION = POSITION[1];
+    const FONT_FAMILY_LIST =document.querySelector('.font_family_list');
+    const FONT_FAMILY = document.querySelector('#font_display')
 
-
-   
+  
     ctx.CANVAS_PAINTER = {
         CANVAS_CONSTANTS : CANVAS_CONSTANTS ,
         SHAPES :SHAPES,
@@ -69,6 +70,9 @@
         ctx : context,
         top:TOP_POSITION,
         left:LEFT_POSITION,
+        FONT_FAMILY_LIST: FONT_FAMILY_LIST,
+        FONT_FAMILY : FONT_FAMILY,
+        FONT_NAME : 'Arial',
         X:10,
         Y:15
     }
