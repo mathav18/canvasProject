@@ -46,7 +46,7 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 }
 
 
-// Draw a trianglr
+// Draw a triangle
  ctx.triangle = ( val, X, Y, style ) =>  {
   
     var x= val.SHAPES.TRIANGLE.X ;
@@ -67,14 +67,14 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 ctx.imageUpload = (val,img) =>  {
     ctx.CANVAS_PAINTER.text = 'img';
     clearCanvas(val);
-    var image = img;
+   
   
     
-    image.onload = function () {
-        let img_x = val.X -30;
-        let img_y = val.Y -30;
-        ctx.CANVAS_PAINTER.ctx.drawImage(image, img_x, img_y , val.IMAGE.width, val.IMAGE.height );
-        val.CURRENT_IMG = image;
+    img.onload = function () {
+        let img_x = val.X - 30;
+        let img_y = val.Y - 30;
+        ctx.CANVAS_PAINTER.ctx.drawImage(img, img_x, img_y , val.IMAGE.width, val.IMAGE.height );
+        val.CURRENT_IMG = img;
     };
 }
 
