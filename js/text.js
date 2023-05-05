@@ -22,7 +22,7 @@
 
 
      ctx.printer = (text) => {
-        console.log(text)
+        
         ctx.textDraw(ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, text, ctx.CANVAS_PAINTER, CANVAS_STYLE);
     }
 
@@ -49,6 +49,7 @@
         }
 
     }
+
 
 
 

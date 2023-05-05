@@ -49,9 +49,9 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 // Draw a trianglr
  ctx.triangle = ( val, X, Y, style ) =>  {
   
-    let x= val.SHAPES.TRIANGLE.X;
-    let y = val.SHAPES.TRIANGLE.Y;
-    let angle =val.SHAPES.TRIANGLE.angle;
+    var x= val.SHAPES.TRIANGLE.X ;
+    var y = val.SHAPES.TRIANGLE.Y;
+    var angle =val.SHAPES.TRIANGLE.angle;
     clearCanvas(val);
     ctx.CANVAS_PAINTER.ctx.beginPath();
     ctx.CANVAS_PAINTER.ctx.moveTo( x, y);
@@ -84,8 +84,7 @@ ctx.imageUpload = (val,img) =>  {
  ctx.clearCanvas = (val) => {
 
     if(!val) {
-        Y = 10;
-        X = 15;
+       
         ctx.currentCanvas = '';
         ctx.CANVAS_PAINTER.left.value = 10;
         ctx.CANVAS_PAINTER.top.value = 15;
@@ -93,7 +92,7 @@ ctx.imageUpload = (val,img) =>  {
         ctx.CANVAS_PAINTER.Y =15;
     }
     
-    let c = val ? val : window.CANVAS_PAINTER;
+    var c = val ? val : ctx.CANVAS_PAINTER;
     ctx.CANVAS_PAINTER.ctx.clearRect(0,0,c.CANVAS_CONSTANTS.WIDTH,c.CANVAS_CONSTANTS.HEIGHT);
     
 
