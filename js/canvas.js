@@ -76,6 +76,8 @@ ctx.imageUpload = (val,img) =>  {
         Y = 10;
         X = 15;
         ctx.currentCanvas = '';
+        ctx.CANVAS_PAINTER.left.value = 10;
+        ctx.CANVAS_PAINTER.top.value = 15;
     }
     
     let c = val ? val : window.CANVAS_PAINTER;

@@ -22,7 +22,7 @@ var styleELement;
 
 
 function printer(uesrText) {
-  
+    console.log(ctx.CANVAS_STYLE.FONT_SIZE)
     ctx.textDraw(ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, uesrText, ctx.CANVAS_PAINTER, CANVAS_STYLE);
 }
 
@@ -44,6 +44,7 @@ ctx.textStyleChanger = (element) =>  {
         styleELement = element;
         styleELement.classList.add('selected');
         CANVAS_STYLE.FONT = element.getAttribute("data-name");
+
         printer(uesrText);
     }
 
@@ -54,10 +55,13 @@ ctx.textStyleChanger = (element) =>  {
 
  ctx.fontSizeChanger = (element) => {
 
-    CANVAS_STYLE.FONT_SIZE = element ? (element.value) : (CANVAS_STYLE.FONT_SIZE += 1);
-    y_positon = element ? (element.value) : (CANVAS_STYLE.FONT_SIZE += 1)
+   
+    CANVAS_STYLE.FONT_SIZE = element.value;
+   
+    ctx.CANVAS_PAINTER.top= element ? ( ctx.CANVAS_PAINTER.top.value + element.value) : (CANVAS_STYLE.FONT_SIZE += 1)
+    if( ctx.CANVAS_PAINTER.text ) {
     printer(uesrText);
-
+    }
 }
 
 
