@@ -58,7 +58,7 @@ ctx.textStyleChanger = (element) =>  {
    
     CANVAS_STYLE.FONT_SIZE = element.value;
    
-    ctx.CANVAS_PAINTER.Y = element ? (element.value) : (CANVAS_STYLE.FONT_SIZE += 1)
+    ctx.CANVAS_PAINTER.Y = element ? (element.value ) : (CANVAS_STYLE.FONT_SIZE += 1)
 
     if(ctx.CANVAS_PAINTER.top.value < 40) {
         ctx.CANVAS_PAINTER.top.value = ctx.CANVAS_PAINTER.Y;
