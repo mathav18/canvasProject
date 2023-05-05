@@ -1,17 +1,17 @@
-
+/* This file will do canvas draw  */
 ( function ( ctx ) { 
 
   
  ctx.textDraw = (X, Y, text , val ,style) => {
-    console.log(ctx.CANVAS_PAINTER.FONT_NAME)
+    
     clearCanvas(val)
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
     ctx.CANVAS_PAINTER.ctx.font = ` ${style.FONT} ${style.FONT_SIZE}px ${ctx.CANVAS_PAINTER.FONT_NAME}`
-    ctx.CANVAS_PAINTER.ctx.fillText(text, X, Y)
+    ctx.CANVAS_PAINTER.ctx.fillText(text, Number(X), Number(Y))
   
 }
 
-
+//Draw a square
  ctx.square = ( val, X, Y, style ) => {
 
     clearCanvas(val)
@@ -20,7 +20,7 @@
 
 }
 
-
+// Draw a reactangle
  ctx.reactangle = (  val, X, Y, style ) => {
 
     clearCanvas(val)
@@ -29,7 +29,7 @@
 
 }
 
-
+//Draw a circle
 ctx.circle = (  val, X, Y, style ,temp) => {
 
     if(temp) {   X++; Y++; }
@@ -45,8 +45,8 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 }
 
 
-
- ctx.trinagle = ( val, X, Y, style ) =>  {
+// Draw a trianglr
+ ctx.triangle = ( val, X, Y, style ) =>  {
   
     let x= val.SHAPES.TRIANGLE.X
     let y = val.SHAPES.TRIANGLE.Y
@@ -62,7 +62,7 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 }
 
 
-
+// Draw a image
 ctx.imageUpload = (val,img) =>  {
 
     clearCanvas(val);
@@ -75,6 +75,7 @@ ctx.imageUpload = (val,img) =>  {
 
 
 
+// This code will be clear all canvas
  ctx.clearCanvas = (val) => {
 
     if(!val) {
