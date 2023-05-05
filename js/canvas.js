@@ -62,9 +62,12 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 
 
 ctx.imageUpload = (val,img) =>  {
+
     clearCanvas(val);
     img.onload = function () {
-        ctx.CANVAS_PAINTER.ctx.drawImage(img, val.IMAGE.X,val.IMAGE.X , val.IMAGE.width, val.IMAGE.height );
+        let img_x = val.X -50;
+        let img_y = val.Y -50;
+        ctx.CANVAS_PAINTER.ctx.drawImage(img, img_x, img_y , val.IMAGE.width, val.IMAGE.height );
     };
 }
 
