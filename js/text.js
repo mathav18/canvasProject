@@ -1,9 +1,8 @@
 /* Writing a small text draw function*/
-
-(function (ctx) {
+(function(ctx) {
     var styleELement;
     ctx.drawer = () => {
-       
+
         ctx.CANVAS_PAINTER.text = 'text';
         ctx.CANVAS_PAINTER.CURRENT_CANVAS = '';
 
@@ -21,8 +20,8 @@
 
 
 
-     ctx.printer = (text) => {
-        
+    ctx.printer = (text) => {
+
         ctx.textDraw(ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, text, ctx.CANVAS_PAINTER, CANVAS_STYLE);
     }
 
@@ -49,7 +48,6 @@
         }
 
     }
-
 
 
 

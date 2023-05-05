@@ -1,7 +1,7 @@
 "use strict";
 /* This file have constants  value*/
 
-(function (ctx) {
+(function(ctx) {
 
     var CANVAS_CONSTANTS = {
         WIDTH: 1000,
@@ -70,9 +70,9 @@
         FONT_FAMILY_LIST: FONT_FAMILY_LIST,
         FONT_FAMILY: FONT_FAMILY,
         FONT_NAME: 'Arial',
-        CURRENT_CANVAS : '',
-        CURRENT_TEXT : '',
-        CURRENT_IMG :'',
+        CURRENT_CANVAS: '',
+        CURRENT_TEXT: '',
+        CURRENT_IMG: '',
         X: 10,
         Y: 15
     }
@@ -82,6 +82,6 @@
         FONT_SIZE: 20
     }
     ctx.CANVAS_STYLE = CANVAS_STYLE
-   
+
 
 })(this);

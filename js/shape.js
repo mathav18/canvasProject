@@ -1,8 +1,8 @@
 "use strict";
 /* This code will do shape draw function */
 
-( function (ctx) {
-    
+(function(ctx) {
+
 
     //check if a current shape 
     ctx.drawShape = (element, currentShape, l, t, temp) => {
@@ -11,9 +11,9 @@
         var X = l ? l : ctx.CANVAS_PAINTER.X;
         var Y = t ? t : ctx.CANVAS_PAINTER.Y;
         var shapeName = element ? (element.getAttribute("data-shape")) : ctx.CANVAS_PAINTER.CURRENT_CANVAS;
-       
 
-        
+
+
         switch (shapeName) {
             case ctx.CANVAS_PAINTER.SHAPES.SQUARE.name:
                 ctx.CANVAS_PAINTER.CURRENT_CANVAS = ctx.CANVAS_PAINTER.SHAPES.SQUARE.name;
@@ -46,7 +46,7 @@
 
     // This code will be  convert select input file to img src
     ctx.uploadImage = (element) => {
-        
+
         var src = element ? URL.createObjectURL(element.files[0]) : ctx.CANVAS_PAINTER.CURRENT_IMAGE;
         ctx.CANVAS_PAINTER.CURRENT_IMAGE = src;
         var img = new Image();
