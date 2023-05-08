@@ -4,8 +4,8 @@
 (function(ctx) {
 
     var CANVAS_CONSTANTS = {
-        WIDTH: 1000,
-        HEIGHT: 700,
+        WIDTH: 1700,
+        HEIGHT: 880,
     }
 
     var SHAPES = {
@@ -45,6 +45,8 @@
         Y: 20
     }
 
+
+   
     var CANVAS = document.querySelector('canvas');
     var context = CANVAS.getContext('2d')
     var INPUT_DIV = document.querySelector('#query');
@@ -81,7 +83,15 @@
         FONT: 'NORMAL',
         FONT_SIZE: 20
     }
-    ctx.CANVAS_STYLE = CANVAS_STYLE
+    var UNDO_ARRAY = [];
+    var  REDO_ARRAY = []
+   
 
+    ctx.CANVAS_STYLE = CANVAS_STYLE
+    ctx.UNDO_ARRAY = UNDO_ARRAY;
+    ctx.REDO_ARRAY = REDO_ARRAY;
+    
 
 })(this);
+
+

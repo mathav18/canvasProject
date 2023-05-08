@@ -59,5 +59,17 @@ FONT_FAMILY_SELECTOR.addEventListener('click',function () { ctx.fontSelector( th
 var FONT_LIST = document.querySelectorAll('.font');
 
 FONT_LIST.forEach((element) => element.addEventListener('click' ,function () { ctx.chooseFont(this) }) );
+
+
+
+var UNDO_BTN = document.querySelector('#undo');
+UNDO_BTN.addEventListener('click', function () { ctx.undoAction(this)})
+
+
+
+
+var UNDO_BTN = document.querySelector('#redo');
+UNDO_BTN.addEventListener('click', function () { ctx.redoAction(this)})
+
 }(this));
 

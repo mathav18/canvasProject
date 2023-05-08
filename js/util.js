@@ -5,8 +5,10 @@
 
 
     ctx.setPosition = function(element) {
+        temp =false;
 
-        element.name == 'left' ? (ctx.CANVAS_PAINTER.X = element.value) : (ctx.CANVAS_PAINTER.Y = element.value)
+
+        element.name == 'left' ? (ctx.CANVAS_PAINTER.X = element.value) : (ctx.CANVAS_PAINTER.Y = element.value);
 
         if (ctx.CANVAS_PAINTER.text == 'text') {
 
@@ -14,7 +16,7 @@
         } else {
             if (ctx.CANVAS_PAINTER.text == 'shape') {
 
-                drawShape(undefined, ctx.CANVAS_PAINTER.CURRENT_CANVAS, ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, true)
+                drawShape(undefined, ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, true);
 
             } else {
                 uploadImage();
@@ -26,6 +28,8 @@
 
     ctx.changeColor = function(element) {
 
+        temp =false;
+
         CANVAS_STYLE.COLOR = element.value;
 
         if (ctx.CANVAS_PAINTER.text == 'text') {
@@ -34,11 +38,24 @@
 
         } else if (ctx.CANVAS_PAINTER.text == 'shape') {
 
-            drawShape(undefined, ctx.CANVAS_PAINTER.CURRENT_CANVAS, ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y);
+            drawShape(undefined,  ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y);
 
         } else {
             return "";
         }
     }
 
-}(this))
+} (this) )
+
+
+
+
+
+
+
+
+
+
+
+
+

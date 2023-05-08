@@ -4,11 +4,30 @@
 
   
  ctx.textDraw = (X, Y, text , val ,style) => {
-    
+   
     clearCanvas(val);
     ctx.CANVAS_PAINTER.ctx.fillStyle = style.COLOR;
     ctx.CANVAS_PAINTER.ctx.font = ` ${style.FONT} ${style.FONT_SIZE}px ${ctx.CANVAS_PAINTER.FONT_NAME}`;
     ctx.CANVAS_PAINTER.ctx.fillText(text, Number(X), Number(Y));
+   
+
+    if( UNDO_REDO_ACTION ) {
+    var obj = {
+          NAME :'text',
+          TEXT:text,
+          X :Number(X),
+          Y: Number(Y),
+          COLOR : style.COLOR,
+          FONT : style.FONT,
+          FONT_SIZE : style.FONT_SIZE,
+          FONT_NAME : ctx.CANVAS_PAINTER.FONT_NAME
+    }
+
+   temp ? ( ctx.UNDO_ARRAY.push(obj) ) : ( ctx.UNDO_ARRAY[ctx.UNDO_ARRAY.length -1] = obj)
+   
+}
+
+
   
 }
 
@@ -48,7 +67,7 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 
 
 // Draw a triangle
- ctx.triangle = ( val, X, Y, style ) =>  {
+ ctx.triangle = ( val,  style ) =>  {
   
     var x= val.SHAPES.TRIANGLE.X ;
     var y = val.SHAPES.TRIANGLE.Y;

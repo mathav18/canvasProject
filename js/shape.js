@@ -5,7 +5,7 @@
 
 
     //check if a current shape 
-    ctx.drawShape = (element, currentShape, l, t, temp) => {
+    ctx.drawShape = (element, l, t, temp) => {
         ctx.CANVAS_PAINTER.text = 'shape';
         var style = ctx.CANVAS_STYLE;
         var X = l ? l : ctx.CANVAS_PAINTER.X;
@@ -33,12 +33,11 @@
 
             case ctx.CANVAS_PAINTER.SHAPES.TRIANGLE.name:
                 ctx.CANVAS_PAINTER.CURRENT_CANVAS = ctx.CANVAS_PAINTER.SHAPES.TRIANGLE.name;
-                ctx.triangle(ctx.CANVAS_PAINTER, X, Y, style)
+                ctx.triangle(ctx.CANVAS_PAINTER, style);
                 break;
 
             default:
-
-                return ''
+                return '';
         }
     }
 
