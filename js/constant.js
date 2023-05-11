@@ -55,7 +55,8 @@
     var TOP_POSITION = POSITION[0];
     var LEFT_POSITION = POSITION[1];
     var FONT_FAMILY_LIST = document.querySelector('.font_family_list');
-    var FONT_FAMILY = document.querySelector('#font_display')
+    var FONT_FAMILY = document.querySelector('#font_display');
+    var FONT_INPUT_BOX = document.querySelector('#fontSize')
 
 
     ctx.CANVAS_PAINTER = {
@@ -71,6 +72,7 @@
         left: LEFT_POSITION,
         FONT_FAMILY_LIST: FONT_FAMILY_LIST,
         FONT_FAMILY: FONT_FAMILY,
+        FONT_INPUT_BOX: FONT_INPUT_BOX,
         FONT_NAME: 'Arial',
         CURRENT_CANVAS: '',
         CURRENT_TEXT: '',
