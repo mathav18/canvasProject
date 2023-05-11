@@ -29,8 +29,6 @@ var temp = true;
         ctx.textDraw(ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, text, ctx.CANVAS_PAINTER, CANVAS_STYLE);
     }
 
-
-
     ctx.textStyleChanger = (element) => {
         temp = false;
 
@@ -150,7 +148,6 @@ var temp = true;
             var current = ctx.UNDO_ARRAY[ctx.UNDO_ARRAY.length - 1]
 
             if (current != undefined) {
-
                 UNDO_REDO_ACTION = false;
                 ctx.CANVAS_PAINTER.X = current.X
                 ctx.CANVAS_PAINTER.Y = current.Y;
@@ -164,7 +161,6 @@ var temp = true;
                 CANVAS_STYLE.FONT_SIZE = current.FONT_SIZE;
                 CANVAS_STYLE.COLOR = current.COLOR;
                 printer(ctx.CANVAS_PAINTER.CURRENT_TEXT);
-
             }
 
         } else {
@@ -217,3 +213,10 @@ var temp = true;
 
 
 }(this))
+
+
+
+document.addEventListener('mousedown' , function () {
+    console.log(true);
+})
+
