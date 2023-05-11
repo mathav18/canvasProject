@@ -33,7 +33,7 @@
 
             case ctx.CANVAS_PAINTER.SHAPES.TRIANGLE.name:
                 ctx.CANVAS_PAINTER.CURRENT_CANVAS = ctx.CANVAS_PAINTER.SHAPES.TRIANGLE.name;
-                ctx.triangle(ctx.CANVAS_PAINTER, style);
+                ctx.triangle(ctx.CANVAS_PAINTER, y, style);
                 break;
 
             default:

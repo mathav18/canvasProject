@@ -70,13 +70,13 @@ ctx.circle = (  val, X, Y, style ,temp) => {
  ctx.triangle = ( val,  style ) =>  {
   
     var x= val.SHAPES.TRIANGLE.X ;
-    var y = val.SHAPES.TRIANGLE.Y;
+    var triangleY = typeof y == 'number' ? y + 40 : Number(y) + 40;
     var angle =val.SHAPES.TRIANGLE.angle;
     clearCanvas(val);
     ctx.CANVAS_PAINTER.ctx.beginPath();
-    ctx.CANVAS_PAINTER.ctx.moveTo( x, y);
-    ctx.CANVAS_PAINTER.ctx.lineTo( x+angle*2, y );
-    ctx.CANVAS_PAINTER.ctx.lineTo (x+angle, y-angle );
+    ctx.CANVAS_PAINTER.ctx.moveTo( x, triangleY);
+    ctx.CANVAS_PAINTER.ctx.lineTo( x+angle*2, triangleY );
+    ctx.CANVAS_PAINTER.ctx.lineTo (x+angle, triangleY-angle );
     ctx.CANVAS_PAINTER.ctx.fillStyle =style.COLOR;
     ctx.CANVAS_PAINTER.ctx.fill();
     ctx.CANVAS_PAINTER.ctx.beginPath();
