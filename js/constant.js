@@ -56,7 +56,8 @@
     var LEFT_POSITION = POSITION[1];
     var FONT_FAMILY_LIST = document.querySelector('.font_family_list');
     var FONT_FAMILY = document.querySelector('#font_display');
-    var FONT_INPUT_BOX = document.querySelector('#fontSize')
+    var FONT_INPUT_BOX = document.querySelector('#fontSize');
+    
 
 
     ctx.CANVAS_PAINTER = {
