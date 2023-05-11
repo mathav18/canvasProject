@@ -191,7 +191,7 @@ var temp = true;
 
     document.addEventListener('keydown', function (event) {
         if (event.ctrlKey && event.key === 'z') {
-            ctx.undoReverse();
+            ctx.undoAction();
         }
     });
 

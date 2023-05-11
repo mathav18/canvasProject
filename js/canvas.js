@@ -50,10 +50,11 @@
 
 }
 
+
 //Draw a circle
 ctx.circle = (  val, X, Y, style ,temp) => {
 
-    if(temp) {   X++; Y++; }
+    if(temp) {   X++;  Y++; }
       
     let circle_X = Number(X) + 45;
     let circle_Y = Number(Y) + 40;
@@ -104,7 +105,6 @@ ctx.imageUpload = (val,img) =>  {
  ctx.clearCanvas = (val) => {
 
     if(!val) {
-       
         ctx.currentCanvas = '';
         ctx.CANVAS_PAINTER.left.value = 10;
         ctx.CANVAS_PAINTER.top.value = 15;
