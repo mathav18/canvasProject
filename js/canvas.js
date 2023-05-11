@@ -26,7 +26,7 @@
    temp ? ( ctx.UNDO_ARRAY.push(obj) ) : ( ctx.UNDO_ARRAY[ctx.UNDO_ARRAY.length -1] = obj)
    
 }
-
+UNDO_REDO_ACTION = true;
 
   
 }

@@ -154,7 +154,6 @@ var temp = true;
                 UNDO_REDO_ACTION = false;
                 ctx.CANVAS_PAINTER.X = current.X
                 ctx.CANVAS_PAINTER.Y = current.Y;
-               console.log( ctx.CANVAS_PAINTER.FONT_INPUT_BOX)
                 ctx.CANVAS_PAINTER.FONT_INPUT_BOX.value = current.FONT_SIZE
                 ctx.CANVAS_PAINTER.COLOR_INPUT_BOX.value = current.COLOR;
                 ctx.CANVAS_PAINTER.left.value = current.X;
