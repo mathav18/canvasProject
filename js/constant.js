@@ -57,6 +57,7 @@
     var FONT_FAMILY_LIST = document.querySelector('.font_family_list');
     var FONT_FAMILY = document.querySelector('#font_display');
     var FONT_INPUT_BOX = document.querySelector('#fontSize');
+    var COLOR_INPUT_BOX = document.querySelector('#color')
     
 
 
@@ -74,6 +75,7 @@
         FONT_FAMILY_LIST: FONT_FAMILY_LIST,
         FONT_FAMILY: FONT_FAMILY,
         FONT_INPUT_BOX: FONT_INPUT_BOX,
+        COLOR_INPUT_BOX : COLOR_INPUT_BOX,
         FONT_NAME: 'Arial',
         CURRENT_CANVAS: '',
         CURRENT_TEXT: '',
