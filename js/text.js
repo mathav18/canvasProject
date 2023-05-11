@@ -154,6 +154,7 @@ var temp = true;
                 UNDO_REDO_ACTION = false;
                 ctx.CANVAS_PAINTER.X = current.X
                 ctx.CANVAS_PAINTER.Y = current.Y;
+                ctx.CANVAS_PAINTER.FONT_INTPUT_DIV.value = current.FONT_SIZE
                 ctx.CANVAS_PAINTER.left.value = current.X;
                 ctx.CANVAS_PAINTER.top.value = current.Y
                 ctx.CANVAS_PAINTER.CURRENT_TEXT = current.TEXT;
@@ -185,10 +186,10 @@ var temp = true;
             ctx.CANVAS_PAINTER.FONT_NAME = current.FONT_NAME;
             ctx.CANVAS_PAINTER.left.value = current.X;
             ctx.CANVAS_PAINTER.top.value = current.Y
+            ctx.CANVAS_PAINTER.FONT_INTPUT_DIV.value = current.FONT_SIZE
             CANVAS_STYLE.FONT = current.FONT;
             CANVAS_STYLE.FONT_SIZE = current.FONT_SIZE;
             CANVAS_STYLE.COLOR = current.COLOR;
-
             printer(ctx.CANVAS_PAINTER.CURRENT_TEXT);
         }
 
