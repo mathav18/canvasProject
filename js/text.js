@@ -29,6 +29,8 @@ var temp = true;
         ctx.textDraw(ctx.CANVAS_PAINTER.X, ctx.CANVAS_PAINTER.Y, text, ctx.CANVAS_PAINTER, CANVAS_STYLE);
     }
 
+    
+
     ctx.textStyleChanger = (element) => {
         temp = false;
 
@@ -190,7 +192,6 @@ var temp = true;
             CANVAS_STYLE.COLOR = current.COLOR;
             printer(ctx.CANVAS_PAINTER.CURRENT_TEXT);
         }
-
     }
 
     document.addEventListener('keydown', function (event) {

@@ -24,6 +24,7 @@
     }
 
    temp ? ( ctx.UNDO_ARRAY.push(obj) ) : ( ctx.UNDO_ARRAY[ctx.UNDO_ARRAY.length -1] = obj)
+   console.log(ctx.UNDO_ARRAY)
    
 }
 UNDO_REDO_ACTION = true;
