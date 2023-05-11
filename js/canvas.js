@@ -67,16 +67,16 @@ ctx.circle = (  val, X, Y, style ,temp) => {
 
 
 // Draw a triangle
- ctx.triangle = ( val,  style ) =>  {
+ ctx.triangle = ( val,y, style ) =>  {
   
-    var x= val.SHAPES.TRIANGLE.X ;
+    var triangleX= val.SHAPES.TRIANGLE.X ;
     var triangleY = typeof y == 'number' ? y + 40 : Number(y) + 40;
     var angle =val.SHAPES.TRIANGLE.angle;
     clearCanvas(val);
     ctx.CANVAS_PAINTER.ctx.beginPath();
-    ctx.CANVAS_PAINTER.ctx.moveTo( x, triangleY);
-    ctx.CANVAS_PAINTER.ctx.lineTo( x+angle*2, triangleY );
-    ctx.CANVAS_PAINTER.ctx.lineTo (x+angle, triangleY-angle );
+    ctx.CANVAS_PAINTER.ctx.moveTo( triangleX, triangleY);
+    ctx.CANVAS_PAINTER.ctx.lineTo( triangleX+angle*2, triangleY );
+    ctx.CANVAS_PAINTER.ctx.lineTo (triangleX+angle, triangleY-angle );
     ctx.CANVAS_PAINTER.ctx.fillStyle =style.COLOR;
     ctx.CANVAS_PAINTER.ctx.fill();
     ctx.CANVAS_PAINTER.ctx.beginPath();
